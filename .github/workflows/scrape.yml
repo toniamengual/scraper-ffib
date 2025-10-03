@@ -1,0 +1,41 @@
+# Nombre de la automatización
+name: Extraer Partidos FFIB
+
+# Disparadores: Cuándo debe ejecutarse
+on:
+  # 1. Automáticamente cada día a las 5 AM (hora UTC)
+  schedule:
+    - cron: '0 5 * * *'
+
+  # 2. Permite la ejecución manual desde la pestaña "Actions"
+  workflow_dispatch:
+
+# Tareas a realizar
+jobs:
+  scrape:
+    # El tipo de máquina que usará el robot (Linux)
+    runs-on: ubuntu-latest
+
+    # Los pasos que seguirá el robot
+    steps:
+      # 1. Descarga tu código (el script .py) a la máquina
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      # 2. Configura el entorno de Python
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Instala todas las librerías necesarias
+      - name: Instalar dependencias
+        run: |
+          pip install selenium webdriver-manager pandas gspread gspread-dataframe google-auth-oauthlib
+
+      # 4. Ejecuta el script de Python
+      - name: Ejecutar el Scraper
+        # Pasa el contenido de tu Secreto a una variable que el script puede leer
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: python extractor_FFIB.py
