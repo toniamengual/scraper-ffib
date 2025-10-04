@@ -3,9 +3,9 @@ name: Extraer Partidos FFIB
 
 # Disparadores: Cuándo debe ejecutarse
 on:
-  # 1. Automáticamente cada día a las 5 AM (hora UTC)
+  # 1. Automáticamente cada día a las 4 AM (hora UTC)
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 4 * * *'
 
   # 2. Permite la ejecución manual desde la pestaña "Actions"
   workflow_dispatch:
