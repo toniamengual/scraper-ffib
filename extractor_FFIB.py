@@ -31,7 +31,7 @@ CATEGORIAS = {
     "Info_AMATEUR A":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=22536414&codcompeticion=22536413&codtemporada=21&CodJornada=&CDetalle=1", "filtro": "BUNYOLA"},
     "Info_AMATEUR B":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=22536417&codcompeticion=22536416&codtemporada=21&CodJornada=&CDetalle=1", "filtro": "BUNYOLA"},
     # --- NUEVA CATEGORÍA CON SU FILTRO PERSONALIZADO ---
-    "Info_CADJUV_FEMENI":             { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=22876961&codcompeticion=22876781&codtemporada=21&CodJornada=1&CDetalle=1", "filtro": "RTVº MARRATXÍ DEL AT.M."}
+    "Info_CADJUV_FEMENI":             { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23216512&codcompeticion=23216509&codtemporada=21&CodJornada=1&CDetalle=1", "filtro": "RTVº MARRATXÍ DEL AT.M."}
 }
 # ==============================================================================
 
