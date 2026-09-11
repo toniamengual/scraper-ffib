@@ -31,7 +31,7 @@ jobs:
       # 3. Instala todas las librerías necesarias
       - name: Instalar dependencias
         run: |
-          pip install selenium webdriver-manager pandas gspread gspread-dataframe google-auth-oauthlib
+          pip install selenium webdriver-manager pandas gspread gspread-dataframe google-auth-oauthlib requests
 
       # 4. Ejecuta el script de Python
       - name: Ejecutar el Scraper
