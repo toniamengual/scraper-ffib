@@ -256,7 +256,13 @@ if lista_total_partidos:
             channel_id = CATEGORIAS.get(nombre_pestana, {}).get('telegram_channel', '')
 
             try:
-                worksheet = sheet.worksheet(nombre_pestana)
+                try:
+                    worksheet = sheet.worksheet(nombre_pestana)
+                    print(f"   Pestaña existente encontrada.")
+                except gspread.exceptions.WorksheetNotFound:
+                    print(f"   Pestaña no encontrada. Creándola...")
+                    worksheet = sheet.add_worksheet(title=nombre_pestana, rows=200, cols=10)
+                    print(f"   ✅ Pestaña '{nombre_pestana}' creada.")
 
                 # --- NUEVO: Leer datos actuales ANTES de sobreescribir ---
                 print("   Leyendo datos actuales para comparación...")
@@ -298,8 +304,8 @@ if lista_total_partidos:
 
                 detectar_cambios_y_notificar(nombre_pestana, partidos_antes, partidos_despues, channel_id)
 
-            except gspread.exceptions.WorksheetNotFound:
-                print(f"   AVISO: No se encontró la pestaña '{nombre_pestana}'.")
+            except Exception as e:
+                print(f"   ERROR procesando '{nombre_pestana}': {e}")
 
         print("\n¡Proceso completado!")
 
