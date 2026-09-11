@@ -38,4 +38,5 @@ jobs:
         # Pasa el contenido de tu Secreto a una variable que el script puede leer
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python extractor_FFIB.py
