@@ -5,7 +5,7 @@ name: Extraer Partidos FFIB
 on:
   # 1. Automáticamente cada día a las 4 AM (hora UTC)
   schedule:
-- cron: '23 4 * * *'
+    - cron: '23 4 * * *'
   # 2. Permite la ejecución manual desde la pestaña "Actions"
   workflow_dispatch:
 
