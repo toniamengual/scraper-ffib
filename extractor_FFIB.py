@@ -89,9 +89,10 @@ def leer_partidos_actuales(worksheet):
         records = worksheet.get_all_records()
         partidos = {}
         for row in records:
-            local = str(row.get('Equipo Local', '')).strip()
+            local    = str(row.get('Equipo Local', '')).strip()
             visitante = str(row.get('Equipo Visitante', '')).strip()
-            if local and visitante:
+            fecha    = str(row.get('Fecha', '')).strip()
+            if local and visitante and fecha:  # Ignora las filas de direcciones (sin fecha)
                 clave = f"{local}|{visitante}"
                 partidos[clave] = {
                     'local': local,
@@ -218,6 +219,7 @@ for nombre_pestana, info in CATEGORIAS.items():
                         if palabra_clave_filtro.upper() in equipo_local.upper() or palabra_clave_filtro.upper() in equipo_visitante.upper():
                             info_div = partido_div.find_element(By.CSS_SELECTOR, "div.col-sm-5")
                             info_texto = info_div.text.strip().split('\n')
+                            campo_texto = info_texto[0].strip() if len(info_texto) > 1 else ""
                             fecha_hora_texto = info_texto[-1]
                             fecha, hora = "", ""
                             if " - " in fecha_hora_texto:
@@ -225,7 +227,7 @@ for nombre_pestana, info in CATEGORIAS.items():
                                 fecha, hora = partes[0].strip(), partes[1].strip()
                             else:
                                 fecha = fecha_hora_texto.strip()
-                            partido = { "Categoria_Pestana": nombre_pestana, "Equipo Local": equipo_local, "Equipo Visitante": equipo_visitante, "Fecha": fecha, "Hora": hora }
+                            partido = { "Categoria_Pestana": nombre_pestana, "Equipo Local": equipo_local, "Equipo Visitante": equipo_visitante, "Fecha": fecha, "Hora": hora, "Campo": campo_texto }
                             lista_total_partidos.append(partido)
                             partidos_encontrados_categoria += 1
                 except Exception: pass
@@ -280,7 +282,7 @@ if lista_total_partidos:
 
                 # --- Actualizar Sheets ---
                 worksheet.clear()
-                df_final = df_grupo[["Equipo Local", "Equipo Visitante", "Fecha", "Hora"]]
+                df_final = df_grupo[["Equipo Local", "Equipo Visitante", "Fecha", "Hora", "Campo"]]
                 set_with_dataframe(worksheet, df_final, include_index=False, include_column_header=True, resize=True)
                 if extra_data:
                     print(f"   Preservando {len(extra_data)} filas de datos de campos.")
