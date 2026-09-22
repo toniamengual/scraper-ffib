@@ -80,6 +80,14 @@ def enviar_telegram(channel_id, mensaje):
         print(f"   [Telegram] ❌ Error de conexión: {e}")
 
 
+def normalize_date(date_str):
+    if not date_str: return ""
+    date_str = date_str.replace("/", "-")
+    parts = date_str.split("-")
+    if len(parts) == 3:
+        return f"{parts[0].zfill(2)}-{parts[1].zfill(2)}-{parts[2]}"
+    return date_str
+
 def leer_partidos_actuales(worksheet):
     """
     Lee los partidos actuales de una pestaña de Sheets antes de sobreescribir.
@@ -97,7 +105,7 @@ def leer_partidos_actuales(worksheet):
                 partidos[clave] = {
                     'local': local,
                     'visitante': visitante,
-                    'fecha': str(row.get('Fecha', '')).strip(),
+                    'fecha': normalize_date(fecha),
                     'hora': str(row.get('Hora', '')).strip()
                 }
         return partidos
@@ -300,7 +308,7 @@ if lista_total_partidos:
                         partidos_despues[clave] = {
                             'local': local,
                             'visitante': visitante,
-                            'fecha': str(row['Fecha']).strip(),
+                            'fecha': normalize_date(str(row['Fecha']).strip()),
                             'hora': str(row['Hora']).strip()
                         }
 
