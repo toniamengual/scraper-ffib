@@ -43,7 +43,7 @@ CATEGORIAS = {
     "Info_ALEVÍ BLANC PREFERENT":     { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004349965204" },  # ALEVI BLANC
 
     # ── Categorías CON calendario temporada 22 ───────────────────────────────
-    "Info_INFANTIL":                  { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23651707&codcompeticion=23651704&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003734265279" },  # INFANTIL F11
+    "Info_INFANTIL F11":              { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23651707&codcompeticion=23651704&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003734265279" },  # INFANTIL F11
     "Info_PREBENJAMI":                { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348692&codcompeticion=23348690&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004347891667" },
     "Info_AMATEUR A":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348366&codcompeticion=23348365&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003877588580" },
     "Info_AMATEUR B":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23433050&codcompeticion=23348367&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004483561029" },
