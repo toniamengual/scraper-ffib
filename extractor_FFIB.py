@@ -41,9 +41,9 @@ CATEGORIAS = {
     "Info_ALEVÍ VERD SUB-11 PREF.":   { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1003815706145" },  # ALEVI VERD
     "Info_ALEVÍ VERMELL 1ª REGIONAL": { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1003940518226" },  # ALEVI VERMELL
     "Info_ALEVÍ BLANC PREFERENT":     { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004349965204" },  # ALEVI BLANC
-    "Info_INFANTIL":                  { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1003734265279" },  # INFANTIL F11
 
     # ── Categorías CON calendario temporada 22 ───────────────────────────────
+    "Info_INFANTIL":                  { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23651707&codcompeticion=23651704&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003734265279" },  # INFANTIL F11
     "Info_PREBENJAMI":                { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348692&codcompeticion=23348690&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004347891667" },
     "Info_AMATEUR A":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348366&codcompeticion=23348365&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003877588580" },
     "Info_AMATEUR B":                 { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23433050&codcompeticion=23348367&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004483561029" },
@@ -225,6 +225,8 @@ for nombre_pestana, info in CATEGORIAS.items():
                         equipo_local = equipos[0].text.strip()
                         equipo_visitante = equipos[1].text.strip()
                         if palabra_clave_filtro.upper() in equipo_local.upper() or palabra_clave_filtro.upper() in equipo_visitante.upper():
+                            if "DESCANSA" in equipo_local.upper() or "DESCANSA" in equipo_visitante.upper():
+                                continue
                             info_div = partido_div.find_element(By.CSS_SELECTOR, "div.col-sm-5")
                             info_texto = info_div.text.strip().split('\n')
                             campo_texto = info_texto[0].strip() if len(info_texto) > 1 else ""
