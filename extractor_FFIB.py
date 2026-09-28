@@ -118,7 +118,22 @@ def detectar_cambios_y_notificar(nombre_pestana, partidos_antes, partidos_despue
     Compara los partidos antes y después de la actualización.
     Genera y envía mensajes de Telegram para cada cambio detectado.
     """
-    nombre_cat = nombre_pestana.replace("Info_", "").upper()
+    NOMBRES_AMIGABLES = {
+        "Info_ESCOLETA":                  "ESCOLETA",
+        "Info_PREBENJAMI":                "PREBENJAMÍ",
+        "Info_BENJAMÍ 1R":                "BENJAMÍ BLANC",
+        "Info_BENJAMÍ 2ON":               "BENJAMÍ VERMELL",
+        "Info_ALEVÍ VERD SUB-11 PREF.":   "ALEVÍ VERD",
+        "Info_ALEVÍ VERMELL 1ª REGIONAL": "ALEVÍ VERMELL",
+        "Info_ALEVÍ BLANC":               "ALEVÍ BLANC",
+        "Info_INFANTIL F7":               "INFANTIL F7",
+        "Info_INFANTIL F11":              "INFANTIL F11",
+        "Info_CADET":                     "CADET",
+        "Info_JUVENIL":                   "JUVENIL",
+        "Info_AMATEUR A":                 "AMATEUR A",
+        "Info_AMATEUR B":                 "AMATEUR B",
+    }
+    nombre_cat = NOMBRES_AMIGABLES.get(nombre_pestana, nombre_pestana.replace("Info_", "").upper())
     cambios_total = 0
 
     # 1) Partidos nuevos (aparecen en los nuevos, no estaban antes)
