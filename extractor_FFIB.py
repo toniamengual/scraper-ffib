@@ -34,13 +34,18 @@ CATEGORIAS = {
     # ── Categorías SIN calendario publicado aún ──────────────────────────────
     "Info_ESCOLETA":                  { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004469746773" },
     # ── Categorías CON calendario temporada pasada (URLs pendientes de actualizar) ──
-    "Info_BENJAMÍ 1R":                { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004375714654" },  # BENJAMI BLANC
-    "Info_BENJAMÍ 2ON":               { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004399088046" },  # BENJAMI VERMELL
-    "Info_ALEVÍ VERD SUB-11 PREF.":   { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1003815706145" },  # ALEVI VERD
-    "Info_ALEVÍ VERMELL 1ª REGIONAL": { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1003940518226" },  # ALEVI VERMELL
+    "Info_BENJAMÍ VERMELL":           { "url": "", "filtro": "BUNYOLA",                  "telegram_channel": "-1004399088046" },  # BENJAMI VERMELL
+    "Info_BENJAMÍ 2ON":               { "url": "", "filtro": "BUNYOLA", "telegram_channel": "-1004399088046" },  # alias old name
 
     # ── Categorías CON calendario temporada 22 ───────────────────────────────
+    "Info_ALEVÍ VERD":                { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23686791&codcompeticion=23686786&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003815706145" },
+    "Info_ALEVÍ VERD SUB-11 PREF.":   { "url": "", "filtro": "BUNYOLA", "telegram_channel": "-1003815706145" },  # alias old name
+    "Info_ALEVÍ VERMELL":             { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23686790&codcompeticion=23686786&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003940518226" },
+    "Info_ALEVÍ VERMELL 1ª REGIONAL": { "url": "", "filtro": "BUNYOLA", "telegram_channel": "-1003940518226" },  # alias old name
+    "Info_BENJAMÍ BLANC":             { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23698303&codcompeticion=23348730&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004375714654" },
+    "Info_BENJAMÍ 1R":                { "url": "", "filtro": "BUNYOLA", "telegram_channel": "-1004375714654" },  # alias old name
     "Info_ALEVÍ BLANC":               { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348722&codcompeticion=23348718&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004349965204" },
+    "Info_ALEVÍ BLANC PREFERENT":     { "url": "", "filtro": "BUNYOLA", "telegram_channel": "-1004349965204" },  # alias del nom antic, per si la pestanya no s'ha renombrat
     "Info_INFANTIL F7":               { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348437&codcompeticion=23348436&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003979746641" },
     "Info_INFANTIL F11":              { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23651707&codcompeticion=23651704&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1003734265279" },  # INFANTIL F11
     "Info_PREBENJAMI":                { "url": "https://www.ffib.es/Fed/NPcd/NFG_VisCalendario_Vis?cod_primaria=1000110&codgrupo=23348692&codcompeticion=23348690&codtemporada=22&CodJornada=&CDetalle=1", "filtro": "BUNYOLA", "telegram_channel": "-1004347891667" },
