@@ -338,7 +338,19 @@ if lista_total_partidos:
             except Exception as e:
                 print(f"   ERROR procesando '{nombre_pestana}': {e}")
 
-        print("\n¡Proceso completado!")
+        print("\n¡Proceso de scraping y volcado a Sheets completado!")
+
+        # --- NUEVO: TRIGGER ACTUALIZACIÓN GOOGLE CALENDAR ---
+        WEB_APP_URL = os.environ.get('APPS_SCRIPT_WEBAPP_URL', '')
+        if WEB_APP_URL:
+            print("\nLlamando al Web App de Google Apps Script para actualizar los calendarios...")
+            try:
+                response = requests.get(WEB_APP_URL)
+                print("Respuesta del Web App:", response.text)
+            except Exception as e:
+                print("Error llamando al Web App:", e)
+        else:
+            print("\n(Aviso: No se ha configurado la variable de entorno APPS_SCRIPT_WEBAPP_URL. No se lanza actualización automática del calendario.)")
 
     except KeyError:
         print("\nERROR CRÍTICO: No se encontró el secreto 'GOOGLE_CREDENTIALS'.")
